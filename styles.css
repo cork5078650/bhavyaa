@@ -1,0 +1,138 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: pink;
+    text-align: center;
+    color: #ff0000;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    color: #ff4d4d;
+}
+
+.welcome-screen, .surprise-section, .final-message {
+    padding: 20px;
+    background-color: #ffcccc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: white;
+    color: #ff4d4d;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #ff6666;
+}
+
+.hidden {
+    display: none;
+}
+
+.center-image {
+    width: 80%; /* Make image responsive */
+    max-width: 350px; /* Limit maximum width */
+    margin: 20px 0;
+}
+
+.floating-gif {
+    position: absolute;
+    animation: float 5s infinite ease-in-out;
+}
+
+.heart-gif {
+    top: 20%;
+    left: 10%;
+    width: 50px; /* Reduced size for mobile */
+}
+
+.cake-gif {
+    top: 50%;
+    right: 10%;
+    width: 50px; /* Reduced size for mobile */
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+/* Floating Symbols */
+.floating-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.floating-symbol {
+    font-size: 30px; /* Reduced size for mobile */
+    animation: symbolFloat 7s infinite ease-in-out;
+    position: absolute;
+    top: 100%;
+}
+
+.floating-symbol:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-symbol:nth-child(2) { left: 30%; animation-delay: 2s; }
+.floating-symbol:nth-child(3) { left: 50%; animation-delay: 4s; }
+.floating-symbol:nth-child(4) { left: 70%; animation-delay: 6s; }
+
+@keyframes symbolFloat {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-150%); }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .welcome-screen, .surprise-section, .final-message {
+        padding: 15px;
+        height: auto; /* Allow content to adjust height */
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .center-image {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .floating-gif {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .floating-gif {
+        width: 30px;
+    }
+}
